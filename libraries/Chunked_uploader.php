@@ -17,9 +17,9 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
  * @version 0.0.1
  */
 class Chunked_uploader {
-	/* configurable via constructor parameter array */
 
-	private $_target_dir; // to which files will be saved
+	/* configurable via constructor parameter array */
+	private $_target_dir; // to which the files will be saved
 	private $_cleanup_target_dir = 0.1; // chance of doing a cleanup this time (0 == never, 1 == always)
 	private $_max_tmp_file_age = 3600; // max lifetime of temp file in seconds
 	private $_transfer_block_size = 4096; // bytes
@@ -378,4 +378,4 @@ class Chunked_upload_request {
 }
 
 /* End of file Chunked_uploader.php */
-/* Location: /sparks/announce/0.0.1/libraries/Chunked_uploader.php */
+/* Location: /sparks/chunked_uploader/0.0.1/libraries/Chunked_uploader.php */
