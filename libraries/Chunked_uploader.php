@@ -63,11 +63,7 @@ class Chunked_uploader {
 		$this->_is_completed = FALSE;
 		$request = new Chunked_upload_request(); // Load the upload request parameters 
 		// set the name of the file to which the completed upload will be written
-		$this->_file_name = $request->get_name();
-		if (!$request->is_chunking_enabled())
-		{
-			$this->_file_name = $this->_get_unique_file_name($request->get_name());
-		}
+		$this->_file_name = $this->_get_unique_file_name($request->get_name());
 		$this->_request = $request;
 	}
 
@@ -125,7 +121,7 @@ class Chunked_uploader {
 						== $this->_partial_file_suffix);
 				if ($is_tmp_file
 						&& (filemtime($tmp_file_path) < time() - $this->_max_tmp_file_age)
-						&& ($tmp_file_path != $this->file_path . $this->_partial_file_suffix))
+						&& ($tmp_file_path != $this->get_file_path() . $this->_partial_file_suffix))
 				{
 					@unlink($tmp_file_path);
 				}
